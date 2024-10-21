@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node --import tsx index.ts",
-    "test": "node --import tsx index.test.ts"
+    "test": "node --import tsx 'src/**/*.test.ts'"
   },
   "keywords": [],
   "author": "",
