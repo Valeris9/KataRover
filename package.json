@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --import tsx index.ts"
+    "dev": "node --import tsx index.ts",
+    "test": "node --import tsx index.test.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "tsx": "^4.19.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.7"
   }
 }
