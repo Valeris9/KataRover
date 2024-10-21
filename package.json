@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --import tsx index.ts",
-    "test": "node --import tsx 'src/**/*.test.ts'"
+    "dev": "node --import tsx src/index.ts",
+    "test": "node --import tsx --test src/**/*.test.ts"
   },
   "keywords": [],
   "author": "",
