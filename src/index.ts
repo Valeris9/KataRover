@@ -1,9 +1,10 @@
 import Robot from "./core/robot";
 import Direction from "./core/direction";
 import Planet from "./core/planet";
+import Position from "./core/position";
 
 export function main(command: string) {
-  const robot = new Robot(0, 0, Direction.N, new Planet(10, 10));
+  const robot = new Robot(new Position(0, 0, Direction.N), new Planet(10, 10));
   console.log(
     "Initial position: " +
       robot.position.x +

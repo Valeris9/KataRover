@@ -5,15 +5,9 @@ import Planet from "./planet";
 class Robot {
   position: Position;
   planet: Planet;
-  private static readonly DIRECTIONS: Direction[] = [
-    Direction.N,
-    Direction.E,
-    Direction.S,
-    Direction.W,
-  ];
 
-  constructor(x: number, y: number, direction: Direction, planet: Planet) {
-    this.position = new Position(x, y, direction);
+  constructor(position: Position, planet: Planet) {
+    this.position = position;
     this.planet = planet;
   }
 
@@ -60,20 +54,17 @@ class Robot {
   }
 
   private turnLeft(): void {
-    const currentIndex = Robot.DIRECTIONS.indexOf(
-      this.position.direction as Direction
-    );
-    const newIndex =
-      (currentIndex - 1 + Robot.DIRECTIONS.length) % Robot.DIRECTIONS.length;
-    this.position.direction = Robot.DIRECTIONS[newIndex];
+    const directions = Object.values(Direction);
+    const currentIndex = directions.indexOf(this.position.direction);
+    const newIndex = (currentIndex - 1 + directions.length) % directions.length;
+    this.position.direction = directions[newIndex];
   }
 
   private turnRight(): void {
-    const currentIndex = Robot.DIRECTIONS.indexOf(
-      this.position.direction as Direction
-    );
-    const newIndex = (currentIndex + 1) % Robot.DIRECTIONS.length;
-    this.position.direction = Robot.DIRECTIONS[newIndex];
+    const directions = Object.values(Direction);
+    const currentIndex = directions.indexOf(this.position.direction);
+    const newIndex = (currentIndex + 1) % directions.length;
+    this.position.direction = directions[newIndex];
   }
 }
 
